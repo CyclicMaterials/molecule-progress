@@ -1,0 +1,116 @@
+/**
+ * @fileoverview CSS for Progress dataflow component
+ * @author Frederik Krautwald
+ * @copyright 2015 Cyclic Materials. All rights reserved.
+ */
+
+@import "@cyclic/atom-layout/atom-layout.css";
+@import "@cyclic/atom-color/atom-color.css";
+
+/*------------------------------------*\
+    #PROGRESS
+\*------------------------------------*/
+
+
+/**
+ * CONTENTS
+ *
+ * COMPONENT
+ * molecule-Progress............................Progress.
+ *
+ * DESCENDENTS
+ * molecule-Progress_container..................Progress container.
+ * molecule-Progress_primaryProgress............Primary progress.
+ * molecule-Progress_secondaryProgress..........Secondary progress.
+ *
+ * COMPONENT STATE MODIFIERS
+ * is-Indeterminate.............................Indeterminate state.
+ */
+
+.molecule-Progress {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+}
+
+    .molecule-Progress_container {
+        position: relative;
+    }
+
+    .molecule-Progress_container,
+    .molecule-Progress.is-Indeterminate .molecule-Progress_primaryProgress::after {
+        background-color: var(--molecule-Progress-container-color, var(--atom-Color-grey-300));
+        height: var(--molecule-Progress-height, 4px);
+    }
+
+    .molecule-Progress_primaryProgress,
+    .molecule-Progress_secondaryProgress {
+        transform-origin: left center;
+        transform: scaleX(0);
+        will-change: transform;
+    }
+
+    .molecule-Progress_primaryProgress {
+        background-color: var(--molecule-Progress-active-color, var(--atom-Color-green-500));
+    }
+
+    .molecule-Progress_secondaryProgress {
+        background-color: var(--molecule-Progress-secondary-color, var(--atom-Color-green-100));
+    }
+
+    .molecule-Progress.is-Disabled .molecule-Progress_primaryProgress {
+        background-color: var(--molecule-Progress-disabled-active-color, var(--atom-Color-grey-500)) !important;
+    }
+
+    .molecule-Progress.is-Disabled .molecule-Progress_secondaryProgress {
+        background-color: var(--molecule-Progress-disabled-secondary-color, var(--atom-Color-grey-300)) !important;
+    }
+
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress {
+        transform-origin: right center;
+        animation: indeterminate-bar 2s linear infinite;
+    }
+
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        transform-origin: center center;
+        animation: indeterminate-splitter 2s linear infinite;
+    }
+
+    @keyframes indeterminate-bar {
+        0% {
+            transform: scaleX(1) translateX(-100%);
+        }
+        50% {
+            transform: scaleX(1) translateX(0%);
+        }
+        75% {
+            transform: scaleX(1) translateX(0%);
+            animation-timing-function: cubic-bezier(0.28, 0.62, 0.37, 0.91);
+        }
+        100% {
+            transform: scaleX(0) translateX(0%);
+        }
+    }
+
+    @keyframes indeterminate-splitter {
+        0% {
+            transform: scaleX(0.75) translateX(-125%);
+        }
+        30% {
+            transform: scaleX(0.75) translateX(-125%);
+            animation-timing-function: cubic-bezier(0.42, 0, 0.6, 0.8);
+        }
+        90% {
+            transform: scaleX(0.75) translateX(125%);
+        }
+        100% {
+            transform: scaleX(0.75) translateX(125%);
+        }
+    }

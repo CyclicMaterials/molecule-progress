@@ -1,0 +1,45 @@
+@import "@cyclic/template-demo-pages/template-demo-pages.css";
+@import "@cyclic/atom-color/atom-color.css";
+@import "./../src/Progress";
+
+body {
+    padding: 40px;
+}
+
+.molecule-Progress {
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+}
+
+    .molecule-Progress.blue .molecule-Progress_primaryProgress {
+        background-color: var(--atom-Color-light-blue-500, #03a9f4);
+    }
+
+    .molecule-Progress.blue .molecule-Progress_secondaryProgress {
+        background-color: var(--atom-Color-light-blue-100, #b3e5fc);
+    }
+
+    .molecule-Progress.red .molecule-Progress_primaryProgress {
+        background-color: var(--atom-Color-red-500, #f44336);
+    }
+
+    .molecule-Progress.red .molecule-Progress_secondaryProgress {
+        background-color: var(--atom-Color-red-100, #ffcdd2);
+    }
+
+    .molecule-Progress.orange .molecule-Progress_primaryProgress {
+        background-color: var(--atom-Color-orange-500, #ff9800);
+    }
+
+    .molecule-Progress.orange .molecule-Progress_secondaryProgress {
+        background-color: var(--atom-Color-orange-100, #ffe0b2);
+    }
+
+    .molecule-Progress.green .molecule-Progress_primaryProgress {
+        background-color: var(--atom-Color-light-green-500, #8bc34a);
+    }
+
+    .molecule-Progress.green .molecule-Progress_secondaryProgress {
+        background-color: var(--atom-Color-light-green-100, #dcedc8);
+    }

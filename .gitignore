@@ -1,3 +1,5 @@
+demo/bundle.js
+demo/styles.css
 logs
 *.log
 /node_modules

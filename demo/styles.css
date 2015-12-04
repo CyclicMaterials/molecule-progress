@@ -1,0 +1,485 @@
+:root {
+
+  /* ==========  Color Palettes  ========== */
+
+  /* opacity for dark text on a light background */ /* or hint text */ /* or icon */
+
+  /* opacity for light text on a dark background */ /* or hint text */ /* or icon */
+
+}
+/* Shared Styles */
+
+.atom-Typography,
+.atom-Typography--expensiveKerning,
+.atom-Typography--nowrap,
+.atom-Typography--display4,
+.atom-Typography--display3,
+.atom-Typography--display2,
+.atom-Typography--display1,
+.atom-Typography--headline,
+.atom-Typography--title,
+.atom-Typography--subhead,
+.atom-Typography--body2,
+.atom-Typography--body1,
+.atom-Typography--caption,
+.atom-Typography--menu,
+.atom-Typography--button {
+  font-family: 'Roboto', 'Noto', sans-serif;
+}
+
+.atom-Typography--code,
+.atom-Typography--code2,
+.atom-Typography--code1 {
+  font-family: 'Roboto Mono', 'Consolas', 'Menlo', monospace;;
+}
+
+.atom-Typography--expensiveKerning,
+.atom-Typography--display4,
+.atom-Typography--display3,
+.atom-Typography--display2,
+.atom-Typography--display1,
+.atom-Typography--headline,
+.atom-Typography--title,
+.atom-Typography--subhead,
+.atom-Typography--caption,
+.atom-Typography--menu,
+.atom-Typography--button {
+  text-rendering: optimizeLegibility;
+}
+
+.atom-Typography--nowrap,
+.atom-Typography--display4,
+.atom-Typography--display3,
+.atom-Typography--title,
+.atom-Typography--caption,
+.atom-Typography--menu,
+.atom-Typography--button {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Font Styles */
+
+.atom-Typography--display4 {
+  font-size: 112px;
+  font-weight: 300;
+  letter-spacing: -0.044em;
+  line-height: 120px;
+}
+
+.atom-Typography--display3 {
+  font-size: 56px;
+  font-weight: 400;
+  letter-spacing: -0.026em;
+  line-height: 60px;
+}
+
+.atom-Typography--display2 {
+  font-size: 45px;
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  line-height: 48px;
+}
+
+.atom-Typography--display1 {
+  font-size: 34px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 40px;
+}
+
+.atom-Typography--headline {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: -0.012em;
+  line-height: 32px;
+}
+
+.atom-Typography--title {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.atom-Typography--subhead {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.atom-Typography--body2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.atom-Typography--body1 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.atom-Typography--caption {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: -0.011em;
+  line-height: 20px;
+}
+
+.atom-Typography--menu {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.atom-Typography--button {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.atom-Typography--code2 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.atom-Typography--code1 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+body {
+  font-family: "Roboto", "Noto", sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 24px;
+  background-color: #fafafa;
+}
+
+.template-DemoPages_sectionContainer {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.template-DemoPages_sectionContainer.isHorizontal {
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.template-DemoPages_sectionContainer.isVertical {
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.template-DemoPages_verticalSection,
+.template-DemoPages_horizontalSection {
+  background-color: white;
+  padding: 24px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12),
+              0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.template-DemoPages_horizontalSection {
+  margin-right: 24px;
+  min-width: 200px;
+}
+
+.template-DemoPages_verticalSection {
+  margin: 0 24px 24px 24px;
+}
+
+.isCentered {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+code {
+  color: #616161;
+}
+/**
+ * @fileoverview CSS for Progress dataflow component
+ * @author Frederik Krautwald
+ * @copyright 2015 Cyclic Materials. All rights reserved.
+ */
+
+.atom-Layout--block {
+  display: block;
+}
+
+.atom-Layout--invisible {
+  visibility: hidden !important;
+}
+
+.atom-Layout--relative {
+  position: relative;
+}
+
+.atom-Layout--fit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.atom-Layout--scroll {
+  overflow-scrolling: touch;
+  overflow: auto;
+}
+
+/* Fixed positions */
+
+.atom-Layout--fixedTop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.atom-Layout--fixedRight {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.atom-Layout--fixedBottom {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.atom-Layout--fixedLeft {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/*------------------------------------*\
+    #PROGRESS
+\*------------------------------------*/
+
+
+/**
+ * CONTENTS
+ *
+ * COMPONENT
+ * molecule-Progress............................Progress.
+ *
+ * DESCENDENTS
+ * molecule-Progress_container..................Progress container.
+ * molecule-Progress_primaryProgress............Primary progress.
+ * molecule-Progress_secondaryProgress..........Secondary progress.
+ *
+ * COMPONENT STATE MODIFIERS
+ * is-Indeterminate.............................Indeterminate state.
+ */
+
+.molecule-Progress {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 200px;
+}
+
+    .molecule-Progress_container {
+        position: relative;
+    }
+
+    .molecule-Progress_container,
+    .molecule-Progress.is-Indeterminate .molecule-Progress_primaryProgress::after {
+        background-color: #e0e0e0;
+        height: 4px;
+    }
+
+    .molecule-Progress_primaryProgress,
+    .molecule-Progress_secondaryProgress {
+        -webkit-transform-origin: left center;
+                transform-origin: left center;
+        -webkit-transform: scaleX(0);
+                transform: scaleX(0);
+        will-change: transform;
+    }
+
+    .molecule-Progress_primaryProgress {
+        background-color: #4caf50;
+    }
+
+    .molecule-Progress_secondaryProgress {
+        background-color: #c8e6c9;
+    }
+
+    .molecule-Progress.is-Disabled .molecule-Progress_primaryProgress {
+        background-color: #9e9e9e !important;
+    }
+
+    .molecule-Progress.is-Disabled .molecule-Progress_secondaryProgress {
+        background-color: #e0e0e0 !important;
+    }
+
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress {
+        -webkit-transform-origin: right center;
+                transform-origin: right center;
+        -webkit-animation: indeterminate-bar 2s linear infinite;
+                animation: indeterminate-bar 2s linear infinite;
+    }
+
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        -webkit-transform-origin: center center;
+                transform-origin: center center;
+        -webkit-animation: indeterminate-splitter 2s linear infinite;
+                animation: indeterminate-splitter 2s linear infinite;
+    }
+
+    @-webkit-keyframes indeterminate-bar {
+        0% {
+            -webkit-transform: scaleX(1) translateX(-100%);
+                    transform: scaleX(1) translateX(-100%);
+        }
+        50% {
+            -webkit-transform: scaleX(1) translateX(0%);
+                    transform: scaleX(1) translateX(0%);
+        }
+        75% {
+            -webkit-transform: scaleX(1) translateX(0%);
+                    transform: scaleX(1) translateX(0%);
+            -webkit-animation-timing-function: cubic-bezier(0.28, 0.62, 0.37, 0.91);
+                    animation-timing-function: cubic-bezier(0.28, 0.62, 0.37, 0.91);
+        }
+        100% {
+            -webkit-transform: scaleX(0) translateX(0%);
+                    transform: scaleX(0) translateX(0%);
+        }
+    }
+
+    @keyframes indeterminate-bar {
+        0% {
+            -webkit-transform: scaleX(1) translateX(-100%);
+                    transform: scaleX(1) translateX(-100%);
+        }
+        50% {
+            -webkit-transform: scaleX(1) translateX(0%);
+                    transform: scaleX(1) translateX(0%);
+        }
+        75% {
+            -webkit-transform: scaleX(1) translateX(0%);
+                    transform: scaleX(1) translateX(0%);
+            -webkit-animation-timing-function: cubic-bezier(0.28, 0.62, 0.37, 0.91);
+                    animation-timing-function: cubic-bezier(0.28, 0.62, 0.37, 0.91);
+        }
+        100% {
+            -webkit-transform: scaleX(0) translateX(0%);
+                    transform: scaleX(0) translateX(0%);
+        }
+    }
+
+    @-webkit-keyframes indeterminate-splitter {
+        0% {
+            -webkit-transform: scaleX(0.75) translateX(-125%);
+                    transform: scaleX(0.75) translateX(-125%);
+        }
+        30% {
+            -webkit-transform: scaleX(0.75) translateX(-125%);
+                    transform: scaleX(0.75) translateX(-125%);
+            -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.6, 0.8);
+                    animation-timing-function: cubic-bezier(0.42, 0, 0.6, 0.8);
+        }
+        90% {
+            -webkit-transform: scaleX(0.75) translateX(125%);
+                    transform: scaleX(0.75) translateX(125%);
+        }
+        100% {
+            -webkit-transform: scaleX(0.75) translateX(125%);
+                    transform: scaleX(0.75) translateX(125%);
+        }
+    }
+
+    @keyframes indeterminate-splitter {
+        0% {
+            -webkit-transform: scaleX(0.75) translateX(-125%);
+                    transform: scaleX(0.75) translateX(-125%);
+        }
+        30% {
+            -webkit-transform: scaleX(0.75) translateX(-125%);
+                    transform: scaleX(0.75) translateX(-125%);
+            -webkit-animation-timing-function: cubic-bezier(0.42, 0, 0.6, 0.8);
+                    animation-timing-function: cubic-bezier(0.42, 0, 0.6, 0.8);
+        }
+        90% {
+            -webkit-transform: scaleX(0.75) translateX(125%);
+                    transform: scaleX(0.75) translateX(125%);
+        }
+        100% {
+            -webkit-transform: scaleX(0.75) translateX(125%);
+                    transform: scaleX(0.75) translateX(125%);
+        }
+    }
+
+body {
+    padding: 40px;
+}
+
+.molecule-Progress {
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+}
+
+    .molecule-Progress.blue .molecule-Progress_primaryProgress {
+        background-color: #03a9f4;
+    }
+
+    .molecule-Progress.blue .molecule-Progress_secondaryProgress {
+        background-color: #b3e5fc;
+    }
+
+    .molecule-Progress.red .molecule-Progress_primaryProgress {
+        background-color: #f44336;
+    }
+
+    .molecule-Progress.red .molecule-Progress_secondaryProgress {
+        background-color: #ffcdd2;
+    }
+
+    .molecule-Progress.orange .molecule-Progress_primaryProgress {
+        background-color: #ff9800;
+    }
+
+    .molecule-Progress.orange .molecule-Progress_secondaryProgress {
+        background-color: #ffe0b2;
+    }
+
+    .molecule-Progress.green .molecule-Progress_primaryProgress {
+        background-color: #8bc34a;
+    }
+
+    .molecule-Progress.green .molecule-Progress_secondaryProgress {
+        background-color: #dcedc8;
+    }

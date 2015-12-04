@@ -1,0 +1,79 @@
+{
+  "name": "@cyclic/molecule-progress",
+  "version": "0.0.0",
+  "author": "Frederik Krautwald",
+  "description": "A Material Design progress.",
+  "license": "MIT",
+  "bugs": "https://github.com/CyclicMaterials/molecule-progress/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CyclicMaterials/molecule-progress"
+  },
+  "keywords": [
+    "cyclejs",
+    "progress",
+    "Material Design"
+  ],
+  "directories": {
+    "doc": "./doc",
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/"
+  ],
+  "main": "./lib/index.js",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "@cycle/dom": "8.0.0-rc4",
+    "@cyclic/atom-color": "^1.0.0",
+    "@cyclic/atom-layout": "^1.0.2",
+    "@cyclic/atom-range-behavior": "0.1.0",
+    "rx": "4.0.7"
+  },
+  "devDependencies": {
+    "@cycle/core": "6.0.0-rc2",
+    "@cyclic/template-demo-pages": "1.0.1",
+    "babel": "5.8.29",
+    "babelify": "6.4.0",
+    "browserify": "12.0.1",
+    "chai": "3.4.1",
+    "chai-virtual-dom": "1.0.0",
+    "cli-release": "1.0.3",
+    "eslint": "1.0.0",
+    "eslint-config-cycle": "3.1.0",
+    "eslint-plugin-cycle": "1.0.2",
+    "eslint-plugin-no-class": "0.1.0",
+    "fast.js": "0.1.1",
+    "glob": "6.0.1",
+    "markdox": "0.1.10",
+    "minifyify": "7.1.0",
+    "mocha": "2.3.4",
+    "postcss": "5.0.12",
+    "postcss-cli": "2.3.2",
+    "postcss-cssnext": "2.2.0",
+    "postcss-custom-properties": "5.0.0",
+    "postcss-import": "7.1.3",
+    "rx-dom-concurrency": "^7.0.3",
+    "validate-commit-message": "3.0.1",
+    "virtual-dom": "2.1.1"
+  },
+  "scripts": {
+    "lint": "eslint src/",
+    "test-js": "mocha --compilers js:babel/register 'src/**/*_test.js'",
+    "test-css": "npm run demo-css",
+    "test": "npm run test-css && npm run lint && npm run test-js",
+    "demo-css": "postcss -c postcss.config.json demo/index.css -o demo/styles.css",
+    "demo-browserify": "browserify demo/index.js -d -p [ minifyify --no-map ] -o demo/bundle.js",
+    "predemo": "rm -f demo/bundle.js demo/styles.css",
+    "demo": "npm run lint && npm run demo-css && npm run demo-browserify",
+    "deps": "npm install && validate-commit-msg",
+    "start": "npm run deps",
+    "patch": "git checkout master && release patch && npm publish --access=public",
+    "minor": "git checkout master && release minor && npm publish --access=public",
+    "major": "git checkout master && release major && npm publish --access=public"
+  }
+}
