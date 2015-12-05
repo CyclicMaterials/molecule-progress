@@ -61,13 +61,13 @@ describe(`Progress`, () => {
             },
           }, [
             div(`.molecule-Progress_container`, [
-              div(`.molecule-Progress_secondaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_secondary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
                 hidden: true,
               }),
-              div(`.molecule-Progress_primaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_primary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
@@ -79,7 +79,7 @@ describe(`Progress`, () => {
       })
     })
 
-    it(`should output DOM with secondaryProgress shown`, (done) => {
+    it(`should output DOM with secondary progress shown`, (done) => {
       const state = assign({}, defaultState, {
         secondaryProgress: 10,
         secondaryRatio: 10,
@@ -97,12 +97,12 @@ describe(`Progress`, () => {
             },
           }, [
             div(`.molecule-Progress_container`, [
-              div(`.molecule-Progress_secondaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_secondary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0.1); transform: scaleX(0.1);`,
                 },
               }),
-              div(`.molecule-Progress_primaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_primary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
@@ -129,13 +129,13 @@ describe(`Progress`, () => {
             },
           }, [
             div(`.molecule-Progress_container`, [
-              div(`.molecule-Progress_secondaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_secondary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
                 hidden: true,
               }),
-              div(`.molecule-Progress_primaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_primary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
@@ -167,12 +167,12 @@ describe(`Progress`, () => {
             },
           }, [
             div(`.molecule-Progress_container`, [
-              div(`.molecule-Progress_secondaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_secondary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0.1); transform: scaleX(0.1);`,
                 },
               }),
-              div(`.molecule-Progress_primaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_primary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0.3); transform: scaleX(0.3);`,
                 },
@@ -201,13 +201,13 @@ describe(`Progress`, () => {
             disabled: true,
           }, [
             div(`.molecule-Progress_container`, [
-              div(`.molecule-Progress_secondaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_secondary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
                 hidden: true,
               }),
-              div(`.molecule-Progress_primaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_primary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
@@ -234,13 +234,13 @@ describe(`Progress`, () => {
             },
           }, [
             div(`.molecule-Progress_container`, [
-              div(`.molecule-Progress_secondaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_secondary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },
                 hidden: true,
               }),
-              div(`.molecule-Progress_primaryProgress.atom-Layout--fit`, {
+              div(`.molecule-Progress_primary.atom-Layout--fit`, {
                 attributes: {
                   style: `-webkit-transform: scaleX(0); transform: scaleX(0);`,
                 },

@@ -289,10 +289,11 @@ code {
  *
  * DESCENDENTS
  * molecule-Progress_container..................Progress container.
- * molecule-Progress_primaryProgress............Primary progress.
- * molecule-Progress_secondaryProgress..........Secondary progress.
+ * molecule-Progress_primary....................Primary progress.
+ * molecule-Progress_secondary..................Secondary progress.
  *
  * COMPONENT STATE MODIFIERS
+ * is-Disabled..................................Disabled state.
  * is-Indeterminate.............................Indeterminate state.
  */
 
@@ -308,13 +309,13 @@ code {
     }
 
     .molecule-Progress_container,
-    .molecule-Progress.is-Indeterminate .molecule-Progress_primaryProgress::after {
+    .molecule-Progress.is-Indeterminate .molecule-Progress_primary::after {
         background-color: #e0e0e0;
         height: 4px;
     }
 
-    .molecule-Progress_primaryProgress,
-    .molecule-Progress_secondaryProgress {
+    .molecule-Progress_primary,
+    .molecule-Progress_secondary {
         -webkit-transform-origin: left center;
                 transform-origin: left center;
         -webkit-transform: scaleX(0);
@@ -322,30 +323,30 @@ code {
         will-change: transform;
     }
 
-    .molecule-Progress_primaryProgress {
+    .molecule-Progress_primary {
         background-color: #4caf50;
     }
 
-    .molecule-Progress_secondaryProgress {
+    .molecule-Progress_secondary {
         background-color: #c8e6c9;
     }
 
-    .molecule-Progress.is-Disabled .molecule-Progress_primaryProgress {
+    .molecule-Progress.is-Disabled .molecule-Progress_primary {
         background-color: #9e9e9e !important;
     }
 
-    .molecule-Progress.is-Disabled .molecule-Progress_secondaryProgress {
+    .molecule-Progress.is-Disabled .molecule-Progress_secondary {
         background-color: #e0e0e0 !important;
     }
 
-    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress {
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primary {
         -webkit-transform-origin: right center;
                 transform-origin: right center;
         -webkit-animation: indeterminate-bar 2s linear infinite;
                 animation: indeterminate-bar 2s linear infinite;
     }
 
-    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress::after {
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primary::after {
         position: absolute;
         top: 0;
         right: 0;
@@ -452,34 +453,34 @@ body {
     width: 100%;
 }
 
-    .molecule-Progress.blue .molecule-Progress_primaryProgress {
+    .molecule-Progress.blue .molecule-Progress_primary {
         background-color: #03a9f4;
     }
 
-    .molecule-Progress.blue .molecule-Progress_secondaryProgress {
+    .molecule-Progress.blue .molecule-Progress_secondary {
         background-color: #b3e5fc;
     }
 
-    .molecule-Progress.red .molecule-Progress_primaryProgress {
+    .molecule-Progress.red .molecule-Progress_primary {
         background-color: #f44336;
     }
 
-    .molecule-Progress.red .molecule-Progress_secondaryProgress {
+    .molecule-Progress.red .molecule-Progress_secondary {
         background-color: #ffcdd2;
     }
 
-    .molecule-Progress.orange .molecule-Progress_primaryProgress {
+    .molecule-Progress.orange .molecule-Progress_primary {
         background-color: #ff9800;
     }
 
-    .molecule-Progress.orange .molecule-Progress_secondaryProgress {
+    .molecule-Progress.orange .molecule-Progress_secondary {
         background-color: #ffe0b2;
     }
 
-    .molecule-Progress.green .molecule-Progress_primaryProgress {
+    .molecule-Progress.green .molecule-Progress_primary {
         background-color: #8bc34a;
     }
 
-    .molecule-Progress.green .molecule-Progress_secondaryProgress {
+    .molecule-Progress.green .molecule-Progress_secondary {
         background-color: #dcedc8;
     }

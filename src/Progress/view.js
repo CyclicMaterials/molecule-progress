@@ -45,13 +45,13 @@ function view({state$}) {
         disabled,
       }, [
         div(`.molecule-Progress_container`, [
-          div(`.molecule-Progress_secondaryProgress.atom-Layout--fit`, {
+          div(`.molecule-Progress_secondary.atom-Layout--fit`, {
             attributes: {
               style: transformedStyle(secondaryRatio),
             },
             hidden: !state.secondaryProgress,
           }),
-          div(`.molecule-Progress_primaryProgress.atom-Layout--fit`, {
+          div(`.molecule-Progress_primary.atom-Layout--fit`, {
             attributes: {
               style: transformedStyle(ratio),
             },

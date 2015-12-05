@@ -20,10 +20,11 @@
  *
  * DESCENDENTS
  * molecule-Progress_container..................Progress container.
- * molecule-Progress_primaryProgress............Primary progress.
- * molecule-Progress_secondaryProgress..........Secondary progress.
+ * molecule-Progress_primary....................Primary progress.
+ * molecule-Progress_secondary..................Secondary progress.
  *
  * COMPONENT STATE MODIFIERS
+ * is-Disabled..................................Disabled state.
  * is-Indeterminate.............................Indeterminate state.
  */
 
@@ -39,40 +40,40 @@
     }
 
     .molecule-Progress_container,
-    .molecule-Progress.is-Indeterminate .molecule-Progress_primaryProgress::after {
+    .molecule-Progress.is-Indeterminate .molecule-Progress_primary::after {
         background-color: var(--molecule-Progress-container-color, var(--atom-Color-grey-300));
         height: var(--molecule-Progress-height, 4px);
     }
 
-    .molecule-Progress_primaryProgress,
-    .molecule-Progress_secondaryProgress {
+    .molecule-Progress_primary,
+    .molecule-Progress_secondary {
         transform-origin: left center;
         transform: scaleX(0);
         will-change: transform;
     }
 
-    .molecule-Progress_primaryProgress {
+    .molecule-Progress_primary {
         background-color: var(--molecule-Progress-active-color, var(--atom-Color-green-500));
     }
 
-    .molecule-Progress_secondaryProgress {
+    .molecule-Progress_secondary {
         background-color: var(--molecule-Progress-secondary-color, var(--atom-Color-green-100));
     }
 
-    .molecule-Progress.is-Disabled .molecule-Progress_primaryProgress {
+    .molecule-Progress.is-Disabled .molecule-Progress_primary {
         background-color: var(--molecule-Progress-disabled-active-color, var(--atom-Color-grey-500)) !important;
     }
 
-    .molecule-Progress.is-Disabled .molecule-Progress_secondaryProgress {
+    .molecule-Progress.is-Disabled .molecule-Progress_secondary {
         background-color: var(--molecule-Progress-disabled-secondary-color, var(--atom-Color-grey-300)) !important;
     }
 
-    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress {
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primary {
         transform-origin: right center;
         animation: indeterminate-bar 2s linear infinite;
     }
 
-    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primaryProgress::after {
+    .molecule-Progress.is-Indeterminate:not(.is-Disabled) .molecule-Progress_primary::after {
         position: absolute;
         top: 0;
         right: 0;
