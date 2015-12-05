@@ -26,6 +26,12 @@
  * COMPONENT STATE MODIFIERS
  * is-Disabled..................................Disabled state.
  * is-Indeterminate.............................Indeterminate state.
+ *
+ * ANIMATIONS
+ * indeterminate-bar............................Indeterminate progress bar
+ *                                              animation.
+ * indeterminate-splitter ......................Indeterminate progress splitter
+ *                                              animation.
  */
 
 .molecule-Progress {
