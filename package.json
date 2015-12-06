@@ -72,6 +72,8 @@
     "demo": "npm run lint && npm run demo-css && npm run demo-browserify",
     "deps": "npm install && npm prune && validate-commit-msg",
     "start": "npm run deps",
+    "predoc": "rm -rf doc/ && mkdir -p doc",
+    "doc": "node ./scripts/make-api-doc.js",
     "copy-css-raw": "for filename in src/**/*.css; do basename=${filename#src/}; cp ${filename} lib/${basename%.css}_raw.css; done",
     "compile-css-each": "for filename in src/**/*.css; do basename=${filename#src/}; postcss -c postcss.config.json ${filename} -o lib/${basename}; cp ${filename} lib/${basename%.css}_raw.css; done",
     "compile-css-single": "postcss -c postcss.config.json src/index.css -o lib/index.css",
