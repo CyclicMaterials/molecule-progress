@@ -8,10 +8,12 @@ import {run} from '@cycle/core'
 import {div, h4, br, makeDOMDriver} from '@cycle/dom'
 import {Observable} from 'rx'
 import ProgressBar from './ProgressBar/index'
+import TransitingProgress from './TransitingProgress/index'
 import Progress from './../src/Progress/index'
 
 function main({DOM}) {
   const progressBar = ProgressBar({DOM})
+  const transitingProgress = TransitingProgress({DOM})
   const progressIndeterminate = Progress({
     props$: Observable.just({indeterminate: true}),
   })
@@ -49,6 +51,7 @@ function main({DOM}) {
   return {
     DOM: Observable.combineLatest(
       progressBar.DOM,
+      transitingProgress.DOM,
       progressIndeterminate.DOM,
       progressIndeterminateBlue.DOM,
       progressColorBlue.DOM,
@@ -65,18 +68,21 @@ function main({DOM}) {
             vTrees[0],
           ]),
 
-          h4(`Indeterminate`),
+          h4(`Transiting Progress bar`),
           div(`.template-DemoPages_verticalSection`, [
             vTrees[1],
-            br(),
+          ]),
+
+          h4(`Indeterminate`),
+          div(`.template-DemoPages_verticalSection`, [
             vTrees[2],
+            br(),
+            vTrees[3],
             br(),
           ]),
 
           h4(`Color`),
           div(`.template-DemoPages_verticalSection`, [
-            vTrees[3],
-            br(),
             vTrees[4],
             br(),
             vTrees[5],
@@ -85,13 +91,15 @@ function main({DOM}) {
             br(),
             vTrees[7],
             br(),
+            vTrees[8],
+            br(),
           ]),
 
           h4(`Disabled`),
           div(`.template-DemoPages_verticalSection`, [
-            vTrees[8],
-            br(),
             vTrees[9],
+            br(),
+            vTrees[10],
             br(),
           ]),
         ])

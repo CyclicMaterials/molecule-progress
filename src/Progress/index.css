@@ -24,6 +24,7 @@
  * molecule-Progress_secondary..................Secondary progress.
  *
  * COMPONENT STATE MODIFIERS
+ * is-Transiting................................Transiting state.
  * is-Disabled..................................Disabled state.
  * is-Indeterminate.............................Indeterminate state.
  *
@@ -49,6 +50,14 @@
     .molecule-Progress.is-Indeterminate .molecule-Progress_primary::after {
         background-color: var(--molecule-Progress-container-color, var(--atom-Color-grey-300, #e0e0e0));
         height: var(--molecule-Progress-height, 4px);
+    }
+
+    .molecule-Progress.is-Transiting .molecule-Progress_primary,
+    .molecule-Progress.is-Transiting .molecule-Progress_secondary {
+        transition-property: transform;
+        transition-duration: var(--molecule-Progress-transition-duration, 0.08s);
+        transition-timing-function: var(--molecule-Progress-transition-timing-function, ease);
+        transition-delay: var(--molecule-Progress-transition-delay, 0s)
     }
 
     .molecule-Progress_primary,

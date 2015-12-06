@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "@cycle/dom": "8.0.0-rc4",
-    "@cyclic/atom-color": "^1.0.0",
-    "@cyclic/atom-layout": "^1.0.2",
+    "@cyclic/atom-color": "1.0.0",
+    "@cyclic/atom-layout": "1.0.2",
     "@cyclic/atom-range-behavior": "0.1.0",
     "rx": "4.0.7"
   },
@@ -62,7 +62,7 @@
     "virtual-dom": "2.1.1"
   },
   "scripts": {
-    "lint": "eslint src/",
+    "lint": "eslint src/**/.",
     "test-js": "mocha --compilers js:babel/register 'src/**/*_test.js'",
     "test-css": "npm run demo-css",
     "test": "npm run test-css && npm run lint && npm run test-js",
@@ -70,8 +70,16 @@
     "demo-browserify": "browserify demo/index.js -d -p [ minifyify --no-map ] -o demo/bundle.js",
     "predemo": "rm -f demo/bundle.js demo/styles.css",
     "demo": "npm run lint && npm run demo-css && npm run demo-browserify",
-    "deps": "npm install && validate-commit-msg",
+    "deps": "npm install && npm prune && validate-commit-msg",
     "start": "npm run deps",
+    "copy-css-raw": "for filename in src/**/*.css; do basename=${filename#src/}; cp ${filename} lib/${basename%.css}_raw.css; done",
+    "compile-css-each": "for filename in src/**/*.css; do basename=${filename#src/}; postcss -c postcss.config.json ${filename} -o lib/${basename}; cp ${filename} lib/${basename%.css}_raw.css; done",
+    "compile-css-single": "postcss -c postcss.config.json src/index.css -o lib/index.css",
+    "compile-css": "npm run compile-css-single && npm run compile-css-each",
+    "compile-js": "babel -d lib/ src/ && rm -rf lib/**/*_test.js",
+    "precompile": "rm -rf lib/ && mkdir -p lib",
+    "compile": "npm run compile-js && npm run compile-css",
+    "prepublish": "npm run compile",
     "patch": "git checkout master && release patch && npm publish --access=public",
     "minor": "git checkout master && release minor && npm publish --access=public",
     "major": "git checkout master && release major && npm publish --access=public"

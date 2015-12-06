@@ -293,8 +293,15 @@ code {
  * molecule-Progress_secondary..................Secondary progress.
  *
  * COMPONENT STATE MODIFIERS
+ * is-Transiting................................Transiting state.
  * is-Disabled..................................Disabled state.
  * is-Indeterminate.............................Indeterminate state.
+ *
+ * ANIMATIONS
+ * indeterminate-bar............................Indeterminate progress bar
+ *                                              animation.
+ * indeterminate-splitter ......................Indeterminate progress splitter
+ *                                              animation.
  */
 
 .molecule-Progress {
@@ -311,7 +318,18 @@ code {
     .molecule-Progress_container,
     .molecule-Progress.is-Indeterminate .molecule-Progress_primary::after {
         background-color: #e0e0e0;
+        background-color: #e0e0e0;
         height: 4px;
+    }
+
+    .molecule-Progress.is-Transiting .molecule-Progress_primary,
+    .molecule-Progress.is-Transiting .molecule-Progress_secondary {
+        transition-property: -webkit-transform;
+        transition-property: transform;
+        transition-property: transform, -webkit-transform;
+        transition-duration: 0.08s;
+        transition-timing-function: ease;
+        transition-delay: 0s
     }
 
     .molecule-Progress_primary,
@@ -325,17 +343,21 @@ code {
 
     .molecule-Progress_primary {
         background-color: #4caf50;
+        background-color: #4caf50;
     }
 
     .molecule-Progress_secondary {
+        background-color: #c8e6c9;
         background-color: #c8e6c9;
     }
 
     .molecule-Progress.is-Disabled .molecule-Progress_primary {
         background-color: #9e9e9e !important;
+        background-color: #9e9e9e !important;
     }
 
     .molecule-Progress.is-Disabled .molecule-Progress_secondary {
+        background-color: #e0e0e0 !important;
         background-color: #e0e0e0 !important;
     }
 
